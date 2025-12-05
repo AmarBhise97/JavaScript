@@ -17,6 +17,6 @@ if(true){
 }
 //console.log(number);==>let......number is not deffined
 //console.log(number1);==> const... number1 is not deffined
-console.log(number3);
+console.log(number3);/**if perficatly work only var */
 
 
