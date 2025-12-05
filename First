@@ -1,0 +1,15 @@
+// if else bolck
+
+/**
+ * if true block will be executed and conditon will true than 
+ * else block will not executed.
+ */
+
+if(100>50){
+    console.log("True block will be executed"  )
+
+}
+else{
+    console.log("False block will be executed ");
+    
+}
