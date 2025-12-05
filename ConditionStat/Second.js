@@ -8,5 +8,4 @@ if(number <number2 || number1<number3){
 }
 else{
     console.log("This is else block....");
-    
 }
