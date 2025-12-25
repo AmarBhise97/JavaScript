@@ -1,0 +1,31 @@
+var counter =0;
+var sum =0;
+for(var i=2;i<20;i++){
+ if(counter==2){
+    break;
+ }else{
+    if(i==2){
+        sum =sum+i
+        counter++;
+
+    }
+    else{
+       var flag = false;
+        for(var j =2;j<i;j++){
+            if(i%j==0){
+                flag =true;
+
+            }
+        }
+            if(!flag){
+                counter++;
+                sum=sum+i;
+
+            
+        }
+    }
+}
+}
+console.log(counter);
+
+console.log(sum);
