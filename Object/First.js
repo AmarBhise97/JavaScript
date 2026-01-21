@@ -6,7 +6,7 @@ let pins = {
     Demo : [1,2,5,6,8],
 
    Greet: function(){
-                console.log("Hello,human");
+      console.log("Hello,human");
    }
 };
 
