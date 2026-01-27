@@ -8,8 +8,11 @@ let Employee={
 
 
 };
-//Object.freeze(Employee);
-delete Employee.department
-Employee.salary=50000
-Employee.department="Marketing"
+Object.freeze(Employee);
+delete Employee.department//  using freeze we cant delete the property
+
+Employee.salary=50000//using freeze we cant add new property
+
+Employee.department="Marketing"//using freeze we cant modify the property
+
 console.log(Employee);
