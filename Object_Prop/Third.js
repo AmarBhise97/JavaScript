@@ -5,7 +5,10 @@ let Student={
 
 };
 Object.seal(Student);
-delete Student.Name;;
-Student .marks=78;
-Student.age=21;
+delete Student.Name;//using seal we cant delete the property
+
+Student .marks=78;//using seal we cant add new property
+
+Student.age=21;//using seal we can modify the property
+
 console.log(Student);
