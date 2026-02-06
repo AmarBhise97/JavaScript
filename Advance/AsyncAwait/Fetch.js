@@ -1,11 +1,14 @@
-fetch("http://localhost:9090/Employeecontroller/getemp").then((v)=>{
+
+
+
+fetch("http://localhost:9090/schoolController/getall").then((v)=>{
    return  v.json();
     
 })
 .then((v)=>{
    console.log(v);
-   v.companyid.map((e)=>{
-       console.log(e);
+   v.companyid.forEach((emp)=>{
+       console.log(emp);
    });
     
 }).catch((r)=>{
