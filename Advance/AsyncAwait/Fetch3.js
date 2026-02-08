@@ -1,4 +1,16 @@
 
+async function getdata(){
+  let add = await  fetch("http://localhost:9090/schoolcontroller/getall");
+   let get= await add.json();
+    console.log("This is API's");
+    
+   console.log(get);
+   
+
+}
+getdata();
+
+
 async function adddata(){
     let data={
         
@@ -17,6 +29,11 @@ async function adddata(){
     console.log(r);
    });
 }
+adddata();
+
+
+
+                
 
 
 
