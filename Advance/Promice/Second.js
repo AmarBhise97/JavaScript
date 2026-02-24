@@ -1,7 +1,7 @@
 const prom=new Promise((resolve,reject)=>{
 
 
-let v=1;
+let v=100;
 setTimeout(() => {
     
 

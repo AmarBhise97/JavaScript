@@ -3,6 +3,10 @@ const p1 = new Promise((res,rej)=>{
         return res("pass");
     }, 7000);
 })
+/**
+ * race will return the first fullfilled or rejected promise
+ * race will shortcircuit like all and any
+ */
 
 const p2 = new Promise((res,rej)=>{
     setTimeout(() => {

@@ -1,5 +1,5 @@
 let str = "Amar Bhise Form Latur";
-console.log(str.includes("Bh",5));
+console.log(str.includes("Bh",8));
 
 
 
