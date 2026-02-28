@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            width: 380px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #ff0099;
+            color: white;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #86b300;
+        }
+
+        .msg {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>OTP Verification</h2>
+
+    <input type="email" id="email" placeholder="Enter Email">
+    <button onclick="getOtp()">Get OTP</button>
+
+    <input type="number" id="otp" placeholder="Enter OTP">
+    <button onclick="verifyOtp()">Verify OTP</button>
+
+    <div class="msg" id="responseMsg"></div>
+</div>
+
+<script>
+
+function getOtp() {
+
+    const email = document.getElementById("email").value;
+
+    fetch(`http://localhost:8080/otp/get-otp?email=${email}`, {
+        method: "GET"
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("responseMsg").innerText = data;
+    })
+    .catch(error => {
+        document.getElementById("responseMsg").innerText = "Error sending OTP!";
+        console.error(error);
+    });
+}
+
+function verifyOtp() {
+
+    const otp = document.getElementById("otp").value;
+
+    fetch(`http://localhost:8080/otp/verify-otp?otp=${otp}`, {
+        method: "POST"
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("responseMsg").innerText = data;
+    })
+    .catch(error => {
+        document.getElementById("responseMsg").innerText = "Invalid or Expired OTP!";
+        console.error(error);
+    });
+}
+
+</script>
+
+</body>
+</html>
